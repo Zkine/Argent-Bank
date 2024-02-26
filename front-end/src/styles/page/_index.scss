@@ -1,0 +1,58 @@
+.index_banner {
+    background: url("../assets/bank-tree.jpeg") no-repeat center 33%/cover;
+    height: 400px;
+    position: relative;
+
+    &__article {
+        position: absolute;
+        background-color: white;
+        top: 50px;
+        right: 50px;
+        margin: 2rem;
+        padding: 2rem;
+        text-align: left;
+        width: 364px;
+    }
+
+    &__h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    &__p {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+
+    }
+}
+
+.index_section {
+    display: flex;
+
+    &__article {
+        flex: 1;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__img {
+        width: 100px;
+        border: 10px solid #00bc77;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+
+    &__title {
+        color: #222;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    &__p {
+        text-align: center;
+    }
+}

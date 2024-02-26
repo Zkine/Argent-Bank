@@ -1,0 +1,46 @@
+.header_nav {
+    padding: 5px 20px;
+    height: 64.375px;
+
+    &__ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__li {
+        list-style: none;
+    }
+
+    &__h1 {
+        font-size: 1.5em;
+    }
+
+    &__link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    &__g1 {
+        text-transform: uppercase;
+        color: #38bc77;
+        font-weight: 700;
+    }
+
+    &__g2 {
+        text-transform: uppercase;
+        color: #165935;
+    }
+
+    &__icon {
+        color: black;
+    }
+
+    &__p {
+        font-weight: 700;
+        margin-left: 5px;
+    }
+}

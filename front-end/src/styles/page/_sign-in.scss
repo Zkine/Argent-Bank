@@ -1,0 +1,49 @@
+.sing-in {
+    background-color: #12002b;
+    height: 734px;
+    display: flex;
+
+    &__article {
+        background-color: white;
+        width: 300px;
+        margin: auto;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__p {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    &__label {
+        font-weight: bold;
+    }
+
+    &__input {
+        padding: 5px;
+        font-size: 1.2rem;
+    }
+
+    &__remember {
+        margin-right: 0.25rem;
+    }
+
+    &__btn {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        background-color: #00bc77;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
