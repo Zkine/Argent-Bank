@@ -8,6 +8,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+    }
+
+    &__name {
+        position: absolute;
+        right: 100px;
     }
 
     &__li {
@@ -27,7 +33,7 @@
     &__g1 {
         text-transform: uppercase;
         color: #38bc77;
-        font-weight: 700;
+        font-weight: $font-weight;
     }
 
     &__g2 {
@@ -36,11 +42,11 @@
     }
 
     &__icon {
-        color: black;
+        color: $black-color;
     }
 
     &__p {
-        font-weight: 700;
+        font-weight: $font-weight;
         margin-left: 5px;
     }
 }

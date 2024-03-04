@@ -1,11 +1,19 @@
-// @mixin btn ($color, $margin ) {
-//     width: 64px;
-//     height: 64px;
-//     border-radius: 6px;
-//     border: none;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background-color: $color;
-//     margin-left: $margin;
-// }
+@mixin main () {
+    background-color: #12002b;
+    height: 734px;
+    display: flex;
+}
+
+@mixin button ($width, $padding, $size, $margin, $border, $background-color, $color, $decoration) {
+    display: block;
+    width: $width;
+    padding: $padding;
+    font-size: $size;
+    font-weight: $font-weight;
+    margin: $margin;
+    background-color: $background-color;
+    color: $color;
+    border-color: $border;
+    cursor: pointer;
+    text-decoration: $decoration;
+}

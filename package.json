@@ -21,7 +21,9 @@
   "scripts": {
     "dev:server": "nodemon ./server/server.js",
     "populate-db": "node ./server/scripts/populateDatabase.js",
-    "server": "node ./server/server.js"
+    "server": "node ./server/server.js",
+    "dev": "webpack --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.build.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

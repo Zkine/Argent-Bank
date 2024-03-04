@@ -4,11 +4,26 @@ import IconChat from "../assets/icon-chat.png";
 import IconMoney from "../assets/icon-money.png";
 import IconSecurtity from "../assets/icon-security.png";
 import Footer from "../components/footer";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
 export default function Index() {
+  useEffect(() => {
+    document.title = "Argent Bank - Home Page";
+  });
+
   return (
     <>
-      <Header />
+      <Header>
+        <li className="header_nav__li">
+          <Link to="/sign-in" className="header_nav__link">
+            <FontAwesomeIcon icon={faCircleUser} className="header_nav__icon" />
+            <p className="header_nav__p">Sign In</p>
+          </Link>
+        </li>
+      </Header>
       <main>
         <section className="index_banner">
           <Article className="index_banner__article">

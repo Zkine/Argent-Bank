@@ -1,0 +1,66 @@
+.btn {
+    background-color: $white-color;
+    border: none;
+    margin: 0;
+    @include button(auto, 0, $font-weight, 0, none, $white-color, $black-color, none);
+}
+
+.user {
+    @include main;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__article_h {
+        color: $white-color;
+        margin-bottom: 2rem;
+    }
+
+    &__h {
+        color: $white-color;
+        text-align: center;
+        font-size: 2.125rem;
+    }
+
+    &__btn {
+        @include button(auto, 10px, 14px, 21.440px auto 0 auto, $Green-color, $Green-color, $white-color, none);
+    }
+
+    &__account {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid $black-color;
+        background-color: $white-color;
+        width: 80%;
+        margin: 0 auto;
+        padding: 1.5rem;
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    &__content_wrapper {
+        width: 100%;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    &__amount {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: $font-weight;
+    }
+
+    &__description {
+        margin: 0;
+    }
+
+    &__button {
+        @include button(275.15px, 8px, 1.1rem, 1rem 0 0 0, $Green-color, $Green-color, $white-color, none);
+    }
+}
