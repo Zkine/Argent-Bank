@@ -12,8 +12,7 @@ const reducer = (currentState, action) => {
       return { ...currentState, profil: userData };
     }
     case "REMOVE_PROFIL": {
-      const profil = [];
-      return { ...currentState, profil: profil };
+      return { ...currentState, profil: [] };
     }
     case "UPDATE_PROFIL": {
       const owner = { ...currentState.owner, firstName: action.payload };

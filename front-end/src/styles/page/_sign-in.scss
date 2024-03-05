@@ -32,6 +32,6 @@
     }
 
     &__btn {
-        @include button(100%, 8px, 1.1rem, 1rem 0 0 0, transparent, $Green-color, $white-color, underline);
+        @include button(100%, 8px, 1.1rem, 1rem 0 0 0, $Green-color, $white-color, transparent, underline);
     }
 }

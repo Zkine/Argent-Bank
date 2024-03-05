@@ -1,8 +1,5 @@
 .btn {
-    background-color: $white-color;
-    border: none;
-    margin: 0;
-    @include button(auto, 0, $font-weight, 0, none, $white-color, $black-color, none);
+    @include button(auto, 0, 1em, 0, $white-color, $black-color, transparent, none);
 }
 
 .user {
@@ -23,7 +20,7 @@
     }
 
     &__btn {
-        @include button(auto, 10px, 14px, 21.440px auto 0 auto, $Green-color, $Green-color, $white-color, none);
+        @include button(auto, 10px, 14px, 21.440px auto 0 auto, $Green-color, $white-color, $Green-color, none);
     }
 
     &__account {
@@ -61,6 +58,6 @@
     }
 
     &__button {
-        @include button(275.15px, 8px, 1.1rem, 1rem 0 0 0, $Green-color, $Green-color, $white-color, none);
+        @include button(275.15px, 8px, 1.1rem, 1rem 0 0 0, $Green-color, $white-color, $Green-color, none);
     }
 }

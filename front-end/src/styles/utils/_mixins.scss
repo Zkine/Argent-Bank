@@ -4,7 +4,7 @@
     display: flex;
 }
 
-@mixin button ($width, $padding, $size, $margin, $border, $background-color, $color, $decoration) {
+@mixin button ($width, $padding, $size, $margin, $background-color, $color, $border, $decoration) {
     display: block;
     width: $width;
     padding: $padding;

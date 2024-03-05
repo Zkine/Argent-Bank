@@ -1,6 +1,6 @@
+import Button from "../components/button";
 import Header from "../components/header";
 import Article from "../components/article";
-import Button from "../components/button";
 import Footer from "../components/footer";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 export default function User() {
   const store = useStore();
   const [userData, setUserData] = useState(store.getState().profil);
-
+  console.log(store.getState().profil);
   useEffect(() => {
     function remove() {
       store.subscribe(() => {
@@ -20,10 +20,6 @@ export default function User() {
     }
     remove();
   }, [store]);
-
-  // function handleClick() {
-  //   store.dispatch({ type: "REMOVE_PROFIL", payload: "" });
-  // }
 
   return (
     <>
@@ -36,15 +32,14 @@ export default function User() {
         </li>
         <li className="header_nav__li">
           <Link to="/" className="header_nav__link">
-            <FontAwesomeIcon icon={faSignOut} className="header_nav__icon" />
             <Button
               type="button"
               className="btn"
-              // onClick={alert("Vous avez cliqué !")}
               onClick={() =>
-                store.dispatch({ type: "ADD_PRODUCT", payload: "" })
+                store.dispatch({ type: "REMOVE_PROFIL", payload: "" })
               }
             >
+              <FontAwesomeIcon icon={faSignOut} className="header_nav__icon" />
               Sign Out
             </Button>
           </Link>
