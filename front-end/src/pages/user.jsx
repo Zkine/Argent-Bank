@@ -21,9 +21,9 @@ export default function User() {
     remove();
   }, [store]);
 
-  function handleClick() {
-    store.dispatch({ type: "REMOVE_PROFIL", payload: "" });
-  }
+  // function handleClick() {
+  //   store.dispatch({ type: "REMOVE_PROFIL", payload: "" });
+  // }
 
   return (
     <>
@@ -37,14 +37,16 @@ export default function User() {
         <li className="header_nav__li">
           <Link to="/" className="header_nav__link">
             <FontAwesomeIcon icon={faSignOut} className="header_nav__icon" />
-            <button
+            <Button
               type="button"
               className="btn"
               // onClick={alert("Vous avez cliqué !")}
-              onClick={handleClick}
+              onClick={() =>
+                store.dispatch({ type: "ADD_PRODUCT", payload: "" })
+              }
             >
               Sign Out
-            </button>
+            </Button>
           </Link>
         </li>
       </Header>

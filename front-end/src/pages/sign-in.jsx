@@ -40,7 +40,8 @@ export default function SignIn() {
     const formJson = Object.fromEntries(formData.entries());
     const userData = JSON.parse(import.meta.env.VITE_ARRAY_USER);
     const user = userData.user.filter(
-      (el) => el.password === formJson.password
+      (el) =>
+        el.password === formJson.password && el.firstName === formJson.username
     );
     formJson.email = user[0].email;
     delete formJson.username;
@@ -61,7 +62,7 @@ export default function SignIn() {
         <Article className="sing-in__article">
           <FontAwesomeIcon icon={faCircleUser} className="header_nav__icon" />
           <h2 className="sing-in__title">Sign In</h2>
-          <form method="" onSubmit={(e) => handleConnection(e)}>
+          <form onSubmit={(e) => handleConnection(e)}>
             <p className="sing-in__p">
               <label htmlFor="username" className="sing-in__label">
                 Username
