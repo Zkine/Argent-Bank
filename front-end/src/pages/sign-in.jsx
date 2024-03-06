@@ -1,7 +1,8 @@
-import { store } from "../store/store";
+// import { store } from "../store/store";
 import { useState, useEffect } from "react";
 import Header from "../components/header";
 import Article from "../components/article";
+import Input from "../components/input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/button";
@@ -9,8 +10,10 @@ import Footer from "../components/footer";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Api from "../api/api";
+import { useStore } from "react-redux";
 
 export default function SignIn() {
+  const store = useStore();
   const [connection, setConnection] = useState(null);
   const [profil, setProfil] = useState(store.getState().profil);
 
@@ -18,11 +21,13 @@ export default function SignIn() {
 
   useEffect(() => {
     async function startFetching() {
-      if (connection) {
+      if (profil.email) {
+        return navigate("/user");
+      } else if (connection) {
         const value = await Api({ ...connection });
         if (value.status !== 400) {
           setConnection(value);
-          store.dispatch({ type: "ADD_PROFIL", payload: value.body });
+          store.dispatch({ type: "ADD_PROFIL", payload: value });
           store.subscribe(() => {
             setProfil(store.getState().profil);
           });
@@ -32,7 +37,7 @@ export default function SignIn() {
       return {};
     }
     startFetching();
-  }, [connection, navigate, profil]);
+  }, [connection, navigate, profil, store]);
 
   function handleConnection(e) {
     e.preventDefault();
@@ -56,28 +61,28 @@ export default function SignIn() {
           <FontAwesomeIcon icon={faCircleUser} className="header_nav__icon" />
           <h2 className="sing-in__title">Sign In</h2>
           <form onSubmit={(e) => handleConnection(e)}>
-            <p className="sing-in__p">
-              <label htmlFor="email" className="sing-in__label">
-                Email
-              </label>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                className="sing-in__input"
-              ></input>
-            </p>
-            <p className="sing-in__p">
-              <label htmlFor="password" className="sing-in__label">
-                Password
-              </label>
-              <input
-                type="text"
-                name="password"
-                id="password"
-                className="sing-in__input"
-              ></input>
-            </p>
+            <Input
+              className="sing-in__p"
+              htmlFor="email"
+              className2="sing-in__label"
+              type="text"
+              name="email"
+              id="email"
+              className3="sing-in__input"
+            >
+              Email
+            </Input>
+            <Input
+              className="sing-in__p"
+              htmlFor="password"
+              className2="sing-in__label"
+              type="text"
+              name="password"
+              id="password"
+              className3="sing-in__input"
+            >
+              Password
+            </Input>
             <p className="sing-in__p">
               <label>
                 <input

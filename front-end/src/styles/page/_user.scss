@@ -23,6 +23,30 @@
         @include button(auto, 10px, 14px, 21.440px auto 0 auto, $Green-color, $white-color, $Green-color, none);
     }
 
+    &__form-update {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 5%;
+    }
+
+    &__p {
+        margin-top: 0;
+    }
+
+    &__input {
+        height: 40px;
+        border-radius: 5px;
+        padding-left: 15px;
+        border: 0;
+    }
+
+    &__btn-update {
+        @include button(30%, 10px, 1em, 0, $white-color, $Green-color, $Green-color, none);
+        border-radius: 5px;
+        border: $Green-color 2px solid;
+    }
+
     &__account {
         display: flex;
         justify-content: space-between;
