@@ -39,7 +39,6 @@ export default function User() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson);
     setsaveName(formJson);
   }
 

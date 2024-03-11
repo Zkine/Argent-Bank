@@ -11,26 +11,29 @@ export default async function Api(userData, token) {
     const token = await fetch(import.meta.env.VITE_URL_LOGIN, optionsLogin)
       .then((response) => response.json())
       .then((data) => {
-        return data;
+        if (data.status === 200) return data;
+        alert(data.message);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.erro(error));
+    if (token !== undefined) {
+      const optionsProfil = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token.body.token}`,
+        },
+      };
 
-    const optionsProfil = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token.body.token}`,
-      },
-    };
+      const profil = await fetch(import.meta.env.VITE_URL_PROFIL, optionsProfil)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === 200) return data;
+          alert(data.message);
+        })
+        .catch((error) => console.error(error));
 
-    const profil = await fetch(import.meta.env.VITE_URL_PROFIL, optionsProfil)
-      .then((response) => response.json())
-      .then((data) => {
-        return data;
-      })
-      .catch((error) => console.error(error));
-
-    return { profil, token };
+      return { profil, token };
+    }
   } else {
     const optionsUpdate = {
       method: "PUT",
@@ -47,7 +50,8 @@ export default async function Api(userData, token) {
     )
       .then((response) => response.json())
       .then((data) => {
-        return data;
+        if (data.status === 200) return data;
+        alert(data.message);
       })
       .catch((error) => console.error(error));
 

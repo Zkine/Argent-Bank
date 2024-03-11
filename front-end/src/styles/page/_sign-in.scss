@@ -18,6 +18,12 @@
         margin-bottom: 1rem;
     }
 
+    &__p:nth-last-child(2) {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: baseline;
+    }
+
     &__label {
         font-weight: $font-weight;
     }
@@ -33,5 +39,15 @@
 
     &__btn {
         @include button(100%, 8px, 1.1rem, 1rem 0 0 0, $Green-color, $white-color, transparent, underline);
+    }
+}
+
+@media only screen and (max-width: 435px) {
+    .sing-in {
+        padding: 15px;
+
+        &__article {
+            width: 95%;
+        }
     }
 }

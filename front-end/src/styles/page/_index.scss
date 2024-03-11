@@ -2,6 +2,7 @@
     background: url("../assets/bank-tree.jpeg") no-repeat center 33%/cover;
     height: 400px;
     position: relative;
+    display: flex;
 
     &__article {
         position: absolute;
@@ -29,6 +30,7 @@
 
 .index_section {
     display: flex;
+    height: 40vh;
 
     &__article {
         flex: 1;
@@ -36,10 +38,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
     &__img {
-        width: 100px;
+        width: 155px;
         border: 10px solid $Green-color;
         border-radius: 50%;
         padding: 1rem;
@@ -51,8 +54,26 @@
         font-weight: $font-weight;
         margin-bottom: 0.5rem;
     }
+}
 
-    &__p {
-        text-align: center;
+@media only screen and (max-width: 1185px) {
+    .index_section {
+        height: 45vh;
+    }
+}
+
+@media only screen and (max-width: 893px) {
+    .index_banner {
+        padding: 15px;
+
+        &__article {
+            margin: auto;
+            position: static;
+        }
+    }
+
+    .index_section {
+        height: auto;
+        flex-direction: column;
     }
 }

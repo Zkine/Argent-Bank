@@ -50,3 +50,31 @@
         margin-left: 5px;
     }
 }
+
+@media only screen and (max-width: 415px) {
+    .header_nav {
+
+        &__ul {
+            align-items: stretch;
+        }
+
+        &__name {
+            right: 27px;
+            bottom: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .header_nav {
+        padding: 5px 5px;
+
+        &__name {
+            right: 17px;
+        }
+
+        &__p {
+            font-size: 0.8em;
+        }
+    }
+}

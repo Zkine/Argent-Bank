@@ -85,3 +85,48 @@
         @include button(275.15px, 8px, 1.1rem, 1rem 0 0 0, $Green-color, $white-color, $Green-color, none);
     }
 }
+
+
+@media only screen and (max-width: 893px) {
+    .user {
+        height: auto;
+
+        &__account {
+            flex-direction: column;
+        }
+
+        &__button {
+            @include button(100%, 8px, 1.1rem, 1rem 0 0 0, $Green-color, $white-color, $Green-color, none);
+        }
+
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .user {
+        &__form-update {
+            flex-flow: column wrap;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .btn {
+        @include button(auto, 0, 0.8em, 0, $white-color, $black-color, transparent, none);
+    }
+
+    .user {
+        &__form-update {
+            flex-flow: column wrap;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &__account {
+            padding: 1rem;
+        }
+    }
+
+}

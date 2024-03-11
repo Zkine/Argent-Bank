@@ -34,9 +34,7 @@ export default function Index() {
               <br />
               High interest rates.
             </h2>
-            <p className="index_banner__p">
-              Open a savings account with Argent Bank today!
-            </p>
+            <p>Open a savings account with Argent Bank today!</p>
           </Article>
         </section>
         <section className="index_section">

@@ -1,4 +1,3 @@
-// import { store } from "../store/store";
 import { useState, useEffect } from "react";
 import Header from "../components/header";
 import Article from "../components/article";
@@ -16,6 +15,8 @@ export default function SignIn() {
   const store = useStore();
   const [connection, setConnection] = useState(null);
   const [profil, setProfil] = useState(store.getState().profil);
+  const [isEmailError, setEmailError] = useState(false);
+  const [isPasswordError, setPasswordError] = useState(false);
 
   const navigate = useNavigate();
 
@@ -26,7 +27,6 @@ export default function SignIn() {
       } else if (connection) {
         const value = await Api({ ...connection });
         if (value.status !== 400) {
-          setConnection(value);
           store.dispatch({ type: "ADD_PROFIL", payload: value });
           store.subscribe(() => {
             setProfil(store.getState().profil);
@@ -43,7 +43,25 @@ export default function SignIn() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formJson = Object.fromEntries(formData.entries());
-    setConnection(formJson);
+    const regExpEmail = new RegExp(import.meta.env.VITE_EMAIL_REGEX);
+    const regExpPassword = new RegExp(import.meta.env.VITE_PASSWORD_REGEX);
+
+    if (!regExpEmail.test(formJson.email)) {
+      return setEmailError(true);
+    } else if (!regExpPassword.test(formJson.password)) {
+      return setPasswordError(true);
+    }
+
+    if (formJson.checkbox) {
+      localStorage.email = formJson.email;
+      localStorage.password = formJson.password;
+      localStorage.checkbox = formJson.checkbox;
+    } else {
+      localStorage.email = "";
+      localStorage.password = "";
+      localStorage.checkbox = "";
+    }
+    return setConnection(formJson);
   }
 
   return (
@@ -67,33 +85,51 @@ export default function SignIn() {
               className2="sing-in__label"
               type="text"
               name="email"
+              defaultValue={localStorage.email}
               id="email"
               className3="sing-in__input"
             >
               Email
             </Input>
+            {isEmailError && (
+              <span>
+                {`🔥 Your email must contain an @ as well as a . at the end of the email
+                is obligatory.`}
+              </span>
+            )}
             <Input
               className="sing-in__p"
               htmlFor="password"
               className2="sing-in__label"
               type="text"
               name="password"
+              defaultValue={localStorage.password}
               id="password"
               className3="sing-in__input"
             >
               Password
             </Input>
-            <p className="sing-in__p">
-              <label>
-                <input
-                  type="checkbox"
-                  name="myCheckbox"
-                  value="option1"
-                  className="sing-in__remember"
-                ></input>
-                Remember me
-              </label>
-            </p>
+            {isPasswordError && (
+              <span>
+                {`🔥 Your password contains a minimum of two characters with at least one letter and one number`}
+              </span>
+            )}
+            <Input
+              className="sing-in__p"
+              htmlFor="checkbox"
+              type="checkbox"
+              name="checkbox"
+              value="remember me"
+              id="checkbox"
+              defaultChecked={
+                localStorage.length > 0 && localStorage.checkbox !== ""
+                  ? true
+                  : false
+              }
+              className3="sing-in__remember"
+            >
+              Remember me
+            </Input>
             <Button type="submit" className="sing-in__btn">
               Sign In
             </Button>

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 export default function Imput({
   className,
   htmlFor,
@@ -7,7 +8,10 @@ export default function Imput({
   type,
   name,
   id,
+  defaultValue,
+  value,
   className3,
+  defaultChecked,
   placeholder,
 }) {
   return (
@@ -20,7 +24,10 @@ export default function Imput({
           type={type}
           name={name}
           id={id}
+          defaultValue={defaultValue}
+          value={value}
           className={className3}
+          defaultChecked={defaultChecked}
           placeholder={placeholder}
         ></input>
       </p>
@@ -36,6 +43,9 @@ Imput.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  defaultValue: PropTypes.string,
+  value: PropTypes.string,
   className3: PropTypes.string.isRequired,
+  defaultChecked: PropTypes.bool,
   placeholder: PropTypes.string,
 };
