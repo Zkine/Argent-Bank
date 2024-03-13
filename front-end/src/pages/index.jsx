@@ -16,7 +16,7 @@ export default function Index() {
 
   return (
     <>
-      <Header>
+      <Header className="header_nav__ul">
         <li className="header_nav__li">
           <Link to="/sign-in" className="header_nav__link">
             <FontAwesomeIcon icon={faCircleUser} className="header_nav__icon" />

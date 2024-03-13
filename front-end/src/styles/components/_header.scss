@@ -51,17 +51,21 @@
     }
 }
 
+.header_nav__ul--user {
+    align-items: center;
+}
+
 @media only screen and (max-width: 415px) {
     .header_nav {
-
-        &__ul {
-            align-items: stretch;
-        }
 
         &__name {
             right: 27px;
             bottom: 0;
         }
+    }
+
+    .header_nav__ul--user {
+        align-items: stretch;
     }
 }
 

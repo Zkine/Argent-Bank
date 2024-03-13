@@ -44,7 +44,7 @@ export default function User() {
 
   return (
     <>
-      <Header>
+      <Header className="header_nav__ul header_nav__ul--user">
         <li className="header_nav__li header_nav__name">
           <Link to="#" className="header_nav__link">
             <FontAwesomeIcon icon={faCircleUser} className="header_nav__icon" />
@@ -52,7 +52,7 @@ export default function User() {
           </Link>
         </li>
         <li className="header_nav__li">
-          <Link to="/" className="header_nav__link">
+          <Link to="/" className="header_nav__link ">
             <Button
               type="button"
               className="btn"

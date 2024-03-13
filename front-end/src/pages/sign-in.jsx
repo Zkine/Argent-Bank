@@ -17,7 +17,6 @@ export default function SignIn() {
   const [profil, setProfil] = useState(store.getState().profil);
   const [isEmailError, setEmailError] = useState(false);
   const [isPasswordError, setPasswordError] = useState(false);
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -54,19 +53,16 @@ export default function SignIn() {
 
     if (formJson.checkbox) {
       localStorage.email = formJson.email;
-      localStorage.password = formJson.password;
       localStorage.checkbox = formJson.checkbox;
     } else {
-      localStorage.email = "";
-      localStorage.password = "";
-      localStorage.checkbox = "";
+      localStorage.clear();
     }
     return setConnection(formJson);
   }
 
   return (
     <>
-      <Header>
+      <Header className="header_nav__ul">
         <li className="header_nav__li">
           <Link to="/sign-in" className="header_nav__link">
             <FontAwesomeIcon icon={faCircleUser} className="header_nav__icon" />
@@ -93,7 +89,7 @@ export default function SignIn() {
             </Input>
             {isEmailError && (
               <span>
-                {`🔥 Your email must contain an @ as well as a . at the end of the email
+                {` Your email must contain an @ as well as a . at the end of the email
                 is obligatory.`}
               </span>
             )}
@@ -101,17 +97,18 @@ export default function SignIn() {
               className="sing-in__p"
               htmlFor="password"
               className2="sing-in__label"
-              type="text"
+              type="password"
               name="password"
               defaultValue={localStorage.password}
               id="password"
               className3="sing-in__input"
+              autoComplete="off"
             >
               Password
             </Input>
             {isPasswordError && (
               <span>
-                {`🔥 Your password contains a minimum of two characters with at least one letter and one number`}
+                {` Your password contains a minimum of two characters with at least one letter and one number`}
               </span>
             )}
             <Input

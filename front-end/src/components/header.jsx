@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-export default function Header({ children }) {
+export default function Header({ className, children }) {
   return (
     <header>
       <nav className="header_nav">
-        <ul className="header_nav__ul">
+        <ul className={className}>
           <li className="header_nav__li">
             <h1 className="header_nav__h1">
               <Link to="/" className="header_nav__link">
@@ -20,5 +20,6 @@ export default function Header({ children }) {
   );
 }
 Header.propTypes = {
+  className: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };

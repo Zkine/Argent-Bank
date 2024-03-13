@@ -13,6 +13,7 @@ export default function Imput({
   className3,
   defaultChecked,
   placeholder,
+  autoComplete,
 }) {
   return (
     <>
@@ -29,6 +30,7 @@ export default function Imput({
           className={className3}
           defaultChecked={defaultChecked}
           placeholder={placeholder}
+          autoComplete={autoComplete}
         ></input>
       </p>
     </>
@@ -48,4 +50,5 @@ Imput.propTypes = {
   className3: PropTypes.string.isRequired,
   defaultChecked: PropTypes.bool,
   placeholder: PropTypes.string,
+  autoComplete: PropTypes.string,
 };
