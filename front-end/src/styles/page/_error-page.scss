@@ -1,0 +1,79 @@
+.error-page {
+    @include main;
+    display: flex;
+
+    &__div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background-color: $white-color;
+        width: 30vw;
+        height: 30vh;
+    }
+
+    &__h2 {
+        font-size: 1.8em;
+        font-weight: 700;
+    }
+
+    &__p1 {
+        font-size: 1em;
+    }
+
+    &__p2 {
+        font-size: 1.5em;
+        font-weight: 700;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 1030px) {
+    .error-page {
+        &__div {
+            width: 40vw;
+            height: 40vh;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .error-page {
+        &__div {
+            width: 50vw;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .error-page {
+        &__div {
+            width: 65vw;
+        }
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .error-page {
+        &__div {
+            width: 75vw;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .error-page {
+        &__h2 {
+            font-size: 1.2em;
+        }
+
+        &__p1 {
+            font-size: 1em;
+        }
+
+        &__p2 {
+            font-size: 1.1em;
+        }
+    }
+}

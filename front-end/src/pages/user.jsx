@@ -18,6 +18,7 @@ export default function User() {
   const [saveName, setsaveName] = useState(null);
 
   useEffect(() => {
+    document.title = "Argent Bank - User Page";
     async function remove() {
       store.subscribe(() => {
         setUserData(store.getState().profil);

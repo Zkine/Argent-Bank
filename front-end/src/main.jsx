@@ -8,6 +8,7 @@ import "./styles/main.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import ErrorPage from "./pages/error-page";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route element={<PrivateRoutes />}>
             <Route element={<User />} path="/user" exact />
           </Route>
+          <Route element={<ErrorPage />} path="/*" />
         </Routes>
       </Router>
     </Provider>

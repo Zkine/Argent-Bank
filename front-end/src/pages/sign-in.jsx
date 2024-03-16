@@ -21,6 +21,7 @@ export default function SignIn() {
 
   useEffect(() => {
     async function startFetching() {
+      document.title = "Argent Bank - Sign-in Page";
       if (profil.email) {
         return navigate("/user");
       } else if (connection) {
